@@ -24,4 +24,10 @@ const NAILPOLISHS: Nailpolish[] = [
 export class AppComponent {
   title = 'My nail polishs collection';
   nailpolishs = NAILPOLISHS;
+
+  selectedNailpolish: Nailpolish;
+
+  onSelect(nailpolish: Nailpolish): void {
+    this.selectedNailpolish = nailpolish;
+  }
 }
