@@ -1,25 +1,18 @@
+<nav>
+  <div class="nav-wrapper">
+    <ul class="right">
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+      <li><a routerLink="/nailpolish">Vernithèque</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
   <div class="center">
     <h1>
       {{title}} !
     </h1>
   </div>
+</div>
 
-  <app-nailpolish-detail [nailpolish] = "selectedNailpolish"></app-nailpolish-detail>
-
-  <div class="row">
-    <div class="col s12 m6 l4 xl3" *ngFor="let nailpolish of nailpolishs">
-      <div class="card">
-        <div class="card-content" 
-        (click)="onSelect(nailpolish)"
-         [class.selected]="nailpolish === selectedNailpolish">
-          <span class="card-title">
-            {{nailpolish.name}}
-          </span>
-          <p>Id : {{nailpolish.id}}</p>
-          <p>Color: {{nailpolish.color}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
+<router-outlet></router-outlet>

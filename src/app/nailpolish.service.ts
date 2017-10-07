@@ -10,5 +10,14 @@ export class NailpolishService {
 
   getNailpolishs(): Promise<Nailpolish[]> {
     return Promise.resolve(NAILPOLISHS)
-   }
+  }
+
+  getNailpolish(id: number): Promise<Nailpolish> {
+    return this.getNailpolishs()
+        .then(nailpolishs =>
+           nailpolishs.find(nailpolish => 
+            nailpolish.id === id
+          )
+        );
+  }
 }

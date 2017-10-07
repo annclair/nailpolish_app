@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 l4 xl3" *ngFor="let nailpolish of nailpolishs">
+      <div class="card">
+        <div class="card-content" [routerLink]="['/detail', nailpolish.id]">
+          <span class="card-title">
+            {{nailpolish.name}}
+          </span>
+          <p>by {{nailpolish.brand}}</p>
+          <p>Color: {{nailpolish.color}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

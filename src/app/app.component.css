@@ -1,8 +1,9 @@
-.card-title{
-    min-height: 3em;
-    text-align: center;
+nav {
+    background-color: #FB8399;
 }
 
-.selected {
-    background-color: #D5DBDE !important;
+a {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
 }
