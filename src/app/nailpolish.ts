@@ -1,9 +1,11 @@
 export class Nailpolish {
     constructor(
-        public id: number,
+        public _id: string,
         public name: string,
         public color: string,
         public brand: string,
-        public category: string
+        public category: string,
+        public createdAt: string,
+        public updatedAt: string
     ) { }
 }

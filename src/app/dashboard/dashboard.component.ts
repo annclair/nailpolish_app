@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
     this.nailpolishService
       .getNailpolishs()
       .then(nailpolishs =>
-        this.lastnailpolishs = nailpolishs.reverse().slice(1, 5)
+        this.lastnailpolishs = nailpolishs.reverse().slice(0, 4)
       );
   }
 }

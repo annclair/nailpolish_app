@@ -23,9 +23,11 @@ export class NailpolishDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap
       .switchMap((params: ParamMap) => 
-        this.nailpolishService.getNailpolish(+params.get('id'))
+        this.nailpolishService.getNailpolish(params.get('id'))
       )
-      .subscribe(nailpolish => this.nailpolish = nailpolish);
+      .subscribe(nailpolish => {
+        this.nailpolish = nailpolish
+      });
   }
   
   goBack(): void {
