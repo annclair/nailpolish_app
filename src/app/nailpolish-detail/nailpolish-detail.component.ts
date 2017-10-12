@@ -19,8 +19,11 @@ export class NailpolishDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location
   ) { }
+  
+  modeEdit: boolean;
 
   ngOnInit(): void {
+    this.modeEdit=false;
     this.route.paramMap
       .switchMap((params: ParamMap) => 
         this.nailpolishService.getNailpolish(params.get('id'))
@@ -29,8 +32,26 @@ export class NailpolishDetailComponent implements OnInit {
         this.nailpolish = nailpolish
       });
   }
+
+  edit(nailpolish): void {
+    this.route.paramMap
+      .switchMap((params: ParamMap) =>
+        this.nailpolishService.update(nailpolish, params.get('id'))
+      )
+      .subscribe(nailpolish => {
+        this.nailpolish = nailpolish;
+        this.modeEditOff()
+      });
+  }
   
   goBack(): void {
     this.location.back();
+  }
+
+  modeEditOn(): void {
+    this.modeEdit = true;
+  }
+  modeEditOff(): void {
+    this.modeEdit = false;
   }
 }

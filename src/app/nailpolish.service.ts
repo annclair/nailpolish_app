@@ -9,7 +9,7 @@ import { Nailpolish } from './nailpolish';
 export class NailpolishService {
 
   private headers = new Headers({ 'Content-Type': 'application/json' });
-  private nailpolishsUrl = 'http://localhost:4000/api/nailpolishs';  // URL to web api
+  private nailpolishsUrl = 'http://localhost:4000/api/nailpolishs';
 
   constructor(private http: Http) { }
 
@@ -39,6 +39,15 @@ export class NailpolishService {
       .then(res => res.json() as Nailpolish)
       .catch(this.handleError);
   }
+
+  update(nailpolish: Nailpolish, id: string): Promise<Nailpolish> {
+    const url = `${this.nailpolishsUrl}/${id}`;
+    return this.http
+      .put(url, nailpolish, { headers: this.headers })
+      .toPromise()
+      .then(() => nailpolish)
+      .catch(this.handleError);
+    }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
