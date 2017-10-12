@@ -12,3 +12,10 @@ h1 {
 .card-action a {
     color: #FB8399 !important;
 }
+
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid pink !important;
+  box-shadow: 0 1px 0 0 #FB8399 !important;
+}
