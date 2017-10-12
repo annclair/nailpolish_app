@@ -43,7 +43,17 @@ export class NailpolishDetailComponent implements OnInit {
         this.modeEditOff()
       });
   }
-  
+
+  delete(): void {
+    this.route.paramMap
+      .switchMap((params: ParamMap) =>
+        this.nailpolishService.delete(params.get('id'))
+      )
+      .subscribe(nailpolish => {
+        this.goBack()
+      });
+  }
+
   goBack(): void {
     this.location.back();
   }

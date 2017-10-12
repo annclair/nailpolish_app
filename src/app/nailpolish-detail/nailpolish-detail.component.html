@@ -44,9 +44,20 @@
     </form>
   </div>
 
-  <div class="fixed-action-btn horizontal" *ngIf="!modeEdit">
-    <a class="btn-floating btn-large pink">
-      <i class="material-icons" (click)="modeEditOn()">edit</i>
+<div class="fixed-action-btn horizontal" *ngIf="!modeEdit">
+  <a class="btn-floating btn-large pink">
+      <i class="large material-icons">menu</i>
     </a>
-  </div>
+  <ul>
+    <li>
+      <a class="btn-floating pink">
+        <i class="material-icons" (click)="delete()">delete</i>
+      </a>
+    </li>
+    <li>
+      <a class="btn-floating pink">
+        <i class="material-icons" (click)="modeEditOn()">edit</i>
+      </a>
+    </li>
+  </ul>
 </div>
