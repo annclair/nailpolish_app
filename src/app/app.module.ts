@@ -10,13 +10,15 @@ import { NailpolishDetailComponent } from './nailpolish-detail/nailpolish-detail
 import { NailpolishComponent } from './nailpolish/nailpolish.component';
 import { NailpolishService } from './nailpolish.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NailpolishAddComponent } from './nailpolish-add/nailpolish-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NailpolishDetailComponent,
     NailpolishComponent,
-    DashboardComponent
+    DashboardComponent,
+    NailpolishAddComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NailpolishDetailComponent } from './nailpolish-detail/nailpolish-detail.component';
 import { NailpolishComponent } from './nailpolish/nailpolish.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NailpolishAddComponent } from './nailpolish-add/nailpolish-add.component';
 
 const routes : Routes = [
     {
@@ -22,6 +23,10 @@ const routes : Routes = [
     {
         path: 'detail/:id',
         component: NailpolishDetailComponent
+    },
+    {
+        path: 'newnailpolish',
+        component: NailpolishAddComponent
     }
 ]
 

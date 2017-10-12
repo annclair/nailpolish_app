@@ -8,6 +8,7 @@ import { Nailpolish } from './nailpolish';
 @Injectable()
 export class NailpolishService {
 
+  private headers = new Headers({ 'Content-Type': 'application/json' });
   private nailpolishsUrl = 'http://localhost:4000/api/nailpolishs';  // URL to web api
 
   constructor(private http: Http) { }
@@ -28,6 +29,14 @@ export class NailpolishService {
       .then(response => {
         return response.json() as Nailpolish
       })
+      .catch(this.handleError);
+  }
+
+  create(nailpolish: Nailpolish): Promise<Nailpolish> {
+    return this.http
+      .post(this.nailpolishsUrl, nailpolish, { headers: this.headers })
+      .toPromise()
+      .then(res => res.json() as Nailpolish)
       .catch(this.handleError);
   }
 

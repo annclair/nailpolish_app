@@ -13,7 +13,7 @@ import { Nailpolish } from './../nailpolish'
 })
 
 export class NailpolishDetailComponent implements OnInit {
-@Input() nailpolish: Nailpolish;
+  @Input() nailpolish: Nailpolish;
   constructor(
     private nailpolishService: NailpolishService,
     private route: ActivatedRoute,
