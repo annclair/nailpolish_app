@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CloudinaryModule } from '@cloudinary/angular-4.x';
+import * as  Cloudinary from 'cloudinary-core';
+import cloudinaryConfiguration from './config';
 
 import { AppRoutingModule } from './app-routing.module'
 
@@ -24,7 +27,8 @@ import { NailpolishAddComponent } from './nailpolish-add/nailpolish-add.componen
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CloudinaryModule.forRoot(Cloudinary, cloudinaryConfiguration)
   ],
   providers: [
     NailpolishService

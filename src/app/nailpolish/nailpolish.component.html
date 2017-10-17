@@ -3,7 +3,8 @@
     <div class="col s12 m6 l4 xl3" *ngFor="let nailpolish of nailpolishs">
       <div class="card" [routerLink]="['/detail', nailpolish._id]">
         <div class="card-image">
-          <img src="{{nailpolish.image}}">
+          <cl-image public-id="{{nailpolish.image}}">
+          </cl-image>
           <span class="card-title">
             {{nailpolish.name}}
           </span>
