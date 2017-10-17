@@ -6,6 +6,7 @@ export class Nailpolish {
         public brand: string,
         public category: string,
         public createdAt: string,
-        public updatedAt: string
+        public updatedAt: string,
+        public image: string
     ) { }
 }

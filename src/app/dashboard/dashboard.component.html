@@ -6,11 +6,14 @@
   <div class="row">
     <h3>My last nail polishs </h3>
     <div class="col s12 m6" *ngFor="let nailpolish of lastnailpolishs">
-      <div class="card">
-        <div class="card-content" [routerLink]="['/detail', nailpolish._id]">
+      <div class="card" [routerLink]="['/detail', nailpolish._id]">
+        <div class="card-image">
+          <img src="{{nailpolish.image}}">
           <span class="card-title">
-              {{nailpolish.name}}
+            {{nailpolish.name}}
           </span>
+        </div>
+        <div class="card-content">
           <span>by {{nailpolish.brand}}</span>
         </div>
       </div>
